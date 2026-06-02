@@ -1,21 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Khrystyna Kryvko | Fitness Coach</title>
+  <title>Khrystyna Kryvko | Fitness trenérka</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+
 <div class="language-switcher">
-  <a href="index.html">🇺🇦 UA</a>
-  <a class="active" href="cz.html">🇨🇿 CZ</a>
+  <a href="index.html" aria-label="Українська">
+    <span class="lang-flag flag-ua" aria-hidden="true"></span>
+    <span class="lang-code">UA</span>
+  </a>
+  <a class="active" href="cz.html" aria-label="Čeština">
+    <span class="lang-flag flag-cz" aria-hidden="true"></span>
+    <span class="lang-code">CZ</span>
+  </a>
 </div>
+
   <main class="page">
     <section class="card">
       <div class="image-box">
-        <img src="photo.png" alt="Khrystyna Kryvko fitness coach" />
+        <img src="media/photo.png" alt="Khrystyna Kryvko fitness trenérka" />
       </div>
 
       <div class="content">
@@ -24,67 +32,144 @@
         <h1>Khrystyna Kryvko</h1>
 
         <p class="subtitle">
-  Pomáhám klientům dosahovat výsledků, zlepšovat kondici a budovat zdravé návyky.
-</p>
+          Pomáhám dosahovat výsledků, posilovat zdraví a vytvářet užitečné návyky.
+        </p>
 
         <p class="about">
-Specializuji se na osobní i online tréninky. Pomáhám klientům
-dosahovat jejich cílů bez extrémních diet a zbytečných omezení.
-Můj přístup je založen na disciplíně, podpoře a dlouhodobě
-udržitelných výsledcích.
-</p>
+          Specializuji se na osobní a online tréninky,
+pomáhám klientům dosahovat jejich cílů bez extrémů
+a přísných omezení. Můj přístup je založený na disciplíně,
+podpoře a skutečných výsledcích, které lze udržet
+dlouhodobě.
+        </p>
 
         <div class="features">
-  <div class="feature">💪 Osobní tréninky</div>
-  <div class="feature">🌍 Online koučink</div>
-  <div class="feature">🥗 Doporučení ke stravování</div>
-  <div class="feature">🔥 Výsledky klientů</div>
-</div>
+          <div class="feature">💪 Osobní tréninky</div>
+          <div class="feature">🌍 Online vedení</div>
+          <div class="feature">🥗 Doporučení ke stravování</div>
+        </div>
 
-        <div class="buttons">
-          <a class="btn btn-primary" href="https://ig.me/m/kristinaa_k7" target="_self">
-Objednat konzultaci
+        <div class="contact-panel" aria-label="Kontaktní údaje">
+          <div class="contact-heading">
+            <span class="contact-kicker">Kontakty</span>
+            <p>Napište na sociálních sítích nebo zavolejte přímo.</p>
+          </div>
+
+          <div class="contact-links">
+            <div class="contact-item">
+              <a class="contact-link" href="https://www.instagram.com/kristinaa_k7/" target="_blank" rel="noopener noreferrer">
+                <span class="contact-icon">
+                  <img src="media/logo_inst.png" alt="" />
+                </span>
+                <span class="contact-copy">
+                  <span>Instagram</span>
+                  <strong>kristinaa_k7</strong>
+                </span>
+              </a>
+              <button class="copy-btn" type="button" data-copy="kristinaa_k7" data-done="Zkopírováno" aria-label="Kopírovat Instagram" title="Kopírovat">
+                <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 8V5.5A1.5 1.5 0 0 1 9.5 4h9A1.5 1.5 0 0 1 20 5.5v9A1.5 1.5 0 0 1 18.5 16H16" />
+                  <path d="M5.5 8h9A1.5 1.5 0 0 1 16 9.5v9a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 4 18.5v-9A1.5 1.5 0 0 1 5.5 8Z" />
+                </svg>
+              </button>
+            </div>
+            <div class="contact-item">
+              <a class="contact-link" href="https://www.tiktok.com/@kristinaa_k7" target="_blank" rel="noopener noreferrer">
+                <span class="contact-icon">
+                  <img src="media/logo_tictok.png" alt="" />
+                </span>
+                <span class="contact-copy">
+                  <span>TikTok</span>
+                  <strong>kristinaa_k7</strong>
+                </span>
+              </a>
+              <button class="copy-btn" type="button" data-copy="kristinaa_k7" data-done="Zkopírováno" aria-label="Kopírovat TikTok" title="Kopírovat">
+                <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 8V5.5A1.5 1.5 0 0 1 9.5 4h9A1.5 1.5 0 0 1 20 5.5v9A1.5 1.5 0 0 1 18.5 16H16" />
+                  <path d="M5.5 8h9A1.5 1.5 0 0 1 16 9.5v9a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 4 18.5v-9A1.5 1.5 0 0 1 5.5 8Z" />
+                </svg>
+              </button>
+            </div>
+            <div class="contact-item">
+              <a class="contact-link" href="tel:+420728484198">
+                <span class="contact-icon contact-phone-icon">☎</span>
+                <span class="contact-copy">
+                  <span>Telefon</span>
+                  <strong>728 484 198</strong>
+                </span>
+              </a>
+              <button class="copy-btn" type="button" data-copy="+420728484198" data-done="Zkopírováno" aria-label="Kopírovat telefon" title="Kopírovat">
+                <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 8V5.5A1.5 1.5 0 0 1 9.5 4h9A1.5 1.5 0 0 1 20 5.5v9A1.5 1.5 0 0 1 18.5 16H16" />
+                  <path d="M5.5 8h9A1.5 1.5 0 0 1 16 9.5v9a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 4 18.5v-9A1.5 1.5 0 0 1 5.5 8Z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+          <div class="buttons">
+  <a class="btn btn-primary"
+   href="https://ig.me/m/kristinaa_k7"
+   target="_self">
+   Objednat se na trénink
 </a>
-          <a class="btn btn-secondary" href="https://drive.google.com/drive/folders/1uf9JvwZ7L15I8RJB7Z5WkjqdKEzvysMz" target="_self">
-Zobrazit výsledky
-</a>
+
+  <!-- <a class="btn btn-secondary"
+     href="https://drive.google.com/drive/folders/1uf9JvwZ7L15I8RJB7Z5WkjqdKEzvysMz"
+     target="_self">
+     Zobrazit výsledky
+  </a> -->
+
+</div>
         </div>
       </div>
     </section>
 
-    <section class="review-section">
-  <div class="review-card">
-    <div class="review-header">
-      <span class="review-label">Recenze</span>
-      <h2>Zanechat recenzi</h2>
-      <p>
-        Podělte se o svou zkušenost s tréninkem. Recenze bude zveřejněna po kontrole.
-      </p>
+    <section class="testimonials-section">
+  <div class="section-header">
+    <span class="section-label">Recenze</span>
+    <h2>Co říkají klienti</h2>
+  </div>
+
+  <div class="testimonials-slider">
+    <div class="testimonials-track">
+      <article class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <h3>Anna</h3>
+        <p>
+          Velmi se mi líbil přístup. Tréninky jsou srozumitelné, příjemné a opravdu přinášejí výsledky.
+        </p>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <h3>Marie</h3>
+        <p>
+          Khrystyna mi pomohla vrátit disciplínu, zlepšit formu a nevzdat to u stravování.
+        </p>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <h3>Olena</h3>
+        <p>
+          Velmi podporující trenérka. Je vidět, že jí záleží nejen na výsledku, ale i na stavu klienta.
+        </p>
+      </article>
     </div>
 
-    <form class="review-form">
-      <input type="text" placeholder="Vaše jméno" required />
-
-      <select required>
-        <option value="">Hodnocení</option>
-        <option value="5">★★★★★ 5</option>
-        <option value="4">★★★★☆ 4</option>
-        <option value="3">★★★☆☆ 3</option>
-        <option value="2">★★☆☆☆ 2</option>
-        <option value="1">★☆☆☆☆ 1</option>
-      </select>
-
-      <textarea placeholder="Vaše recenze" rows="5" required></textarea>
-
-      <button type="submit">Odeslat recenzi</button>
-    </form>
+    <div class="slider-controls">
+      <button class="slider-btn prev" type="button">‹</button>
+      <button class="slider-btn next" type="button">›</button>
+    </div>
   </div>
 </section>
 
-<section class="location-section">
+    <section class="bottom-section">
   <div class="location-card">
     <div class="location-info">
-      <span class="location-label">Локація</span>
+      <span class="location-label">Lokalita</span>
       <h2>Max Fitness Doudlevce</h2>
       <p>
         Zborovská 571/22A,<br />
@@ -95,7 +180,7 @@ Zobrazit výsledky
          href="https://maps.app.goo.gl/XmRp74Ar4HQVm9838"
          target="_blank"
          rel="noopener noreferrer">
-        Відкрити в Google Maps
+        Otevřít v Google Maps
       </a>
     </div>
 
@@ -106,10 +191,38 @@ Zobrazit výsledky
       </iframe>
     </div>
   </div>
+
+  <div class="review-card">
+    <div class="review-header">
+      <span class="review-label">Recenze</span>
+      <h2>Zanechat recenzi</h2>
+      <p>
+        Podělte se o svou zkušenost s tréninky. Recenze bude zveřejněna po kontrole.
+      </p>
+    </div>
+
+    <form class="review-form">
+      <input type="text" placeholder="Vaše jméno" required />
+
+<div class="rating">
+  <span data-value="1">★</span>
+  <span data-value="2">★</span>
+  <span data-value="3">★</span>
+  <span data-value="4">★</span>
+  <span data-value="5">★</span>
+</div>
+
+<input type="hidden" id="ratingValue" value="0">
+
+      <textarea placeholder="Vaše recenze" rows="5" required></textarea>
+
+      <button type="submit">Odeslat recenzi</button>
+    </form>
+  </div>
 </section>
 
   </main>
-  
+
   <script src="script.js"></script>
 </body>
 </html>

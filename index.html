@@ -10,14 +10,20 @@
 <body>
 
 <div class="language-switcher">
-  <a class="active" href="index.html">🇺🇦 UA</a>
-  <a href="cz.html">🇨🇿 CZ</a>
+  <a class="active" href="index.html" aria-label="Українська">
+    <span class="lang-flag flag-ua" aria-hidden="true"></span>
+    <span class="lang-code">UA</span>
+  </a>
+  <a href="cz.html" aria-label="Čeština">
+    <span class="lang-flag flag-cz" aria-hidden="true"></span>
+    <span class="lang-code">CZ</span>
+  </a>
 </div>
 
   <main class="page">
     <section class="card">
       <div class="image-box">
-        <img src="photo.png" alt="Khrystyna Kryvko fitness coach" />
+        <img src="media/photo.png" alt="Khrystyna Kryvko fitness coach" />
       </div>
 
       <div class="content">
@@ -41,7 +47,65 @@
           <div class="feature">💪 Персональні тренування</div>
           <div class="feature">🌍 Онлайн супровід</div>
           <div class="feature">🥗 Рекомендації щодо харчування</div>
-          <div class="feature">🔥 Результати клієнтів</div>
+        </div>
+
+        <div class="contact-panel" aria-label="Контактні дані">
+          <div class="contact-heading">
+            <span class="contact-kicker">Контакти</span>
+            <p>Напишіть у соцмережах або зателефонуйте напряму.</p>
+          </div>
+
+          <div class="contact-links">
+            <div class="contact-item">
+              <a class="contact-link" href="https://www.instagram.com/kristinaa_k7/" target="_blank" rel="noopener noreferrer">
+                <span class="contact-icon">
+                  <img src="media/logo_inst.png" alt="" />
+                </span>
+                <span class="contact-copy">
+                  <span>Instagram</span>
+                  <strong>kristinaa_k7</strong>
+                </span>
+              </a>
+              <button class="copy-btn" type="button" data-copy="kristinaa_k7" data-done="Скопійовано" aria-label="Скопіювати Instagram" title="Скопіювати">
+                <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 8V5.5A1.5 1.5 0 0 1 9.5 4h9A1.5 1.5 0 0 1 20 5.5v9A1.5 1.5 0 0 1 18.5 16H16" />
+                  <path d="M5.5 8h9A1.5 1.5 0 0 1 16 9.5v9a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 4 18.5v-9A1.5 1.5 0 0 1 5.5 8Z" />
+                </svg>
+              </button>
+            </div>
+            <div class="contact-item">
+              <a class="contact-link" href="https://www.tiktok.com/@kristinaa_k7" target="_blank" rel="noopener noreferrer">
+                <span class="contact-icon">
+                  <img src="media/logo_tictok.png" alt="" />
+                </span>
+                <span class="contact-copy">
+                  <span>TikTok</span>
+                  <strong>kristinaa_k7</strong>
+                </span>
+              </a>
+              <button class="copy-btn" type="button" data-copy="kristinaa_k7" data-done="Скопійовано" aria-label="Скопіювати TikTok" title="Скопіювати">
+                <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 8V5.5A1.5 1.5 0 0 1 9.5 4h9A1.5 1.5 0 0 1 20 5.5v9A1.5 1.5 0 0 1 18.5 16H16" />
+                  <path d="M5.5 8h9A1.5 1.5 0 0 1 16 9.5v9a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 4 18.5v-9A1.5 1.5 0 0 1 5.5 8Z" />
+                </svg>
+              </button>
+            </div>
+            <div class="contact-item">
+              <a class="contact-link" href="tel:+420728484198">
+                <span class="contact-icon contact-phone-icon">☎</span>
+                <span class="contact-copy">
+                  <span>Телефон</span>
+                  <strong>728 484 198</strong>
+                </span>
+              </a>
+              <button class="copy-btn" type="button" data-copy="+420728484198" data-done="Скопійовано" aria-label="Скопіювати телефон" title="Скопіювати">
+                <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 8V5.5A1.5 1.5 0 0 1 9.5 4h9A1.5 1.5 0 0 1 20 5.5v9A1.5 1.5 0 0 1 18.5 16H16" />
+                  <path d="M5.5 8h9A1.5 1.5 0 0 1 16 9.5v9a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 4 18.5v-9A1.5 1.5 0 0 1 5.5 8Z" />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
 
           <div class="buttons">
