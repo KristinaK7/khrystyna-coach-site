@@ -559,8 +559,7 @@ h1 {
   color: #f5f5f5;
 }
 
-.review-form button,
-.location-btn {
+.review-form button {
   display: inline-block;
   text-decoration: none;
   margin-top: 4px;
@@ -575,8 +574,7 @@ h1 {
   transition: 0.25s ease;
 }
 
-.review-form button:hover,
-.location-btn:hover {
+.review-form button:hover {
   background: #f0c86a;
   transform: translateY(-1px);
 }
@@ -588,20 +586,57 @@ h1 {
 }
 
 .location-info p {
-  margin-bottom: 18px;
+  margin-bottom: 0;
 }
 
 .location-map {
+  position: relative;
   min-height: 230px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #f4f6f8;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.location-map iframe {
+.location-map-link {
+  position: relative;
+  min-height: 230px;
+  display: block;
+  color: #070707;
+  text-decoration: none;
+}
+
+.map-preview-img {
   width: 100%;
   height: 100%;
   min-height: 230px;
-  border: 0;
-  border-radius: 20px;
-  filter: grayscale(0.15) brightness(0.9);
+  display: block;
+  object-fit: cover;
+  transition: 0.25s ease;
+}
+
+.location-map-link:hover .map-preview-img {
+  filter: brightness(0.97);
+}
+
+.map-open-badge {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 3;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #d6aa4b;
+  color: #070707;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+  transition: 0.25s ease;
+}
+
+.location-map-link:hover .map-open-badge {
+  background: #f0c86a;
+  transform: translateY(-1px);
 }
 
 /* Tablet */
@@ -653,7 +688,8 @@ h1 {
   }
 
   .location-map,
-  .location-map iframe {
+  .location-map-link,
+  .map-preview-img {
     min-height: 190px;
   }
 }
@@ -770,16 +806,24 @@ h1 {
   padding-top: 24px;
 }
 
-  .review-form button,
-  .location-btn {
+  .review-form button {
     width: 100%;
     text-align: center;
   }
 
   .location-map,
-  .location-map iframe {
+  .location-map-link,
+  .map-preview-img {
     min-height: 170px;
   }
+
+  .map-open-badge {
+    right: 12px;
+    bottom: 12px;
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
 }
 
 .rating {
