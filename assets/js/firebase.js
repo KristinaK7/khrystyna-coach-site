@@ -50,7 +50,7 @@ window.watchAdminAuth = (callback) => {
 
 window.saveReview = async (review) => {
   if (!firestore) {
-    throw new Error("Firebase is not configured. Fill firebaseConfig in firebase.js.");
+    throw new Error("Firebase is not configured. Check firebaseConfig in assets/js/firebase.js.");
   }
 
   return firestore.collection("reviews").add({
@@ -67,7 +67,7 @@ window.saveReview = async (review) => {
 
 window.loadReviews = async () => {
   if (!firestore) {
-    throw new Error("Firebase is not configured. Fill firebaseConfig in firebase.js.");
+    throw new Error("Firebase is not configured. Check firebaseConfig in assets/js/firebase.js.");
   }
 
   const snapshot = await firestore
@@ -97,7 +97,7 @@ window.loadReviews = async () => {
 
 window.loadAllReviews = async () => {
   if (!firestore) {
-    throw new Error("Firebase is not configured. Fill firebaseConfig in firebase.js.");
+    throw new Error("Firebase is not configured. Check firebaseConfig in assets/js/firebase.js.");
   }
 
   const snapshot = await firestore.collection("reviews").get();
@@ -134,7 +134,7 @@ window.loadAllReviews = async () => {
 
 window.updateReviewStatus = async (reviewId, status) => {
   if (!firestore) {
-    throw new Error("Firebase is not configured. Fill firebaseConfig in firebase.js.");
+    throw new Error("Firebase is not configured. Check firebaseConfig in assets/js/firebase.js.");
   }
 
   const update = { status };
@@ -148,7 +148,7 @@ window.updateReviewStatus = async (reviewId, status) => {
 
 window.deleteReview = async (reviewId) => {
   if (!firestore) {
-    throw new Error("Firebase is not configured. Fill firebaseConfig in firebase.js.");
+    throw new Error("Firebase is not configured. Check firebaseConfig in assets/js/firebase.js.");
   }
 
   return firestore.collection("reviews").doc(reviewId).delete();

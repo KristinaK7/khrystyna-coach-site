@@ -59,7 +59,7 @@ const createButton = (label, className, onClick) => {
 
 const setLoading = (isLoading) => {
   refreshButton.disabled = isLoading;
-  refreshButton.textContent = isLoading ? "Loading..." : "Refresh";
+  refreshButton.classList.toggle("loading", isLoading);
 };
 
 const setCardBusy = (card, isBusy) => {
