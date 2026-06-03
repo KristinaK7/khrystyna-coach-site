@@ -1,16 +1,21 @@
 const stars = document.querySelectorAll(".rating span");
 const ratingInput = document.getElementById("ratingValue");
+const ratingControl = document.querySelector(".rating");
 const reviewForm = document.querySelector(".review-form");
 const pageLanguage = document.documentElement.lang === "cs" ? "cs" : "uk";
 const reviewMessages = {
   uk: {
+    nameRequired: "Введіть ім'я перед відправкою.",
     ratingRequired: "Оберіть оцінку перед відправкою.",
+    textRequired: "Напишіть текст відгуку перед відправкою.",
     sending: "Відправляємо відгук...",
     success: "Дякуємо! Відгук надіслано на перевірку.",
     error: "Не вдалося надіслати відгук. Спробуйте ще раз.",
   },
   cs: {
+    nameRequired: "Zadejte jméno před odesláním.",
     ratingRequired: "Vyberte hodnocení před odesláním.",
+    textRequired: "Napište text recenze před odesláním.",
     sending: "Odesíláme recenzi...",
     success: "Děkujeme! Recenze byla odeslána ke kontrole.",
     error: "Recenzi se nepodařilo odeslat. Zkuste to prosím znovu.",
@@ -61,24 +66,60 @@ const resetRating = () => {
   });
 };
 
+const keepFocusedFieldVisible = (field) => {
+  window.setTimeout(() => {
+    const viewportHeight = window.visualViewport?.height || window.innerHeight;
+    const fieldRect = field.getBoundingClientRect();
+    const keyboardSafeBottom = viewportHeight - 120;
+
+    if (fieldRect.bottom > keyboardSafeBottom || fieldRect.top < 24) {
+      field.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  }, 320);
+};
+
 if (reviewForm) {
+  reviewForm.querySelectorAll("input, textarea").forEach((field) => {
+    field.addEventListener("focus", () => {
+      keepFocusedFieldVisible(field);
+    });
+  });
+
   reviewForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const nameInput = reviewForm.querySelector('input[type="text"]');
     const textInput = reviewForm.querySelector("textarea");
     const submitButton = reviewForm.querySelector('button[type="submit"]');
+    const name = nameInput.value.trim();
+    const text = textInput.value.trim();
     const rating = Number(ratingInput?.value || 0);
+
+    if (!name) {
+      setReviewFormMessage(labels.nameRequired, "error");
+      nameInput.focus();
+      return;
+    }
 
     if (!rating) {
       setReviewFormMessage(labels.ratingRequired, "error");
+      ratingControl?.focus();
+      return;
+    }
+
+    if (!text) {
+      setReviewFormMessage(labels.textRequired, "error");
+      textInput.focus();
       return;
     }
 
     const review = {
-      name: nameInput.value.trim(),
+      name,
       rating,
-      text: textInput.value.trim(),
+      text,
       pageLanguage,
     };
 

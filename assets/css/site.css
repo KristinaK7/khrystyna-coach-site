@@ -9,6 +9,7 @@ body {
   background: #080808;
   color: #f5f5f5;
   line-height: 1.6;
+  scroll-padding-bottom: 160px;
 }
 
 .language-switcher {
@@ -561,6 +562,8 @@ h1 {
   font: inherit;
   outline: none;
   transition: 0.25s ease;
+  scroll-margin-top: 24px;
+  scroll-margin-bottom: 180px;
 }
 
 .review-form textarea {
