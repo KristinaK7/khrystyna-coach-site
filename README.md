@@ -39,7 +39,7 @@ Public pages:
 
 Admin page:
 - uses Firebase Authentication;
-- supports short login aliases such as `kristina`, which maps to `kristina@admin.local`;
+- supports short login aliases that map to the internal `admin.local` auth domain;
 - loads all reviews and allows changing status or deleting reviews.
 
 Firestore security rules should protect moderation actions so only the admin account can read all reviews, update statuses, or delete reviews.
