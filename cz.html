@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Khrystyna Kryvko | Fitness trenérka</title>
+  <link rel="preload" href="assets/media/photo.webp" as="image" type="image/webp" fetchpriority="high" />
   <link rel="stylesheet" href="assets/css/site.css" />
 </head>
 
@@ -23,7 +24,10 @@
   <main class="page">
     <section class="card">
       <div class="image-box">
-        <img src="assets/media/photo.png" alt="Khrystyna Kryvko fitness trenérka" />
+        <picture>
+          <source srcset="assets/media/photo.webp" type="image/webp" />
+          <img src="assets/media/photo.png" alt="Khrystyna Kryvko fitness trenérka" width="900" height="1200" loading="eager" decoding="async" fetchpriority="high" />
+        </picture>
       </div>
 
       <div class="content">
