@@ -416,13 +416,6 @@ h1 {
   display: none;
 }
 
-.testimonial-stars {
-  color: #d6aa4b;
-  font-size: 15px;
-  letter-spacing: 1px;
-  line-height: 1.3;
-}
-
 .testimonial-card h3 {
   font-size: 16px;
   line-height: 1.3;
@@ -898,29 +891,6 @@ h1 {
     font-size: 13px;
   }
 
-}
-
-.rating {
-  display: flex;
-  gap: 6px;
-  font-size: 34px;
-  line-height: 1;
-  margin: 4px 0 6px;
-}
-
-.rating span {
-  color: rgba(255, 255, 255, 0.25);
-  cursor: pointer;
-  transition: 0.2s ease;
-  user-select: none;
-}
-
-.rating span.active {
-  color: #d6aa4b;
-}
-
-.rating span:hover {
-  transform: scale(1.08);
 }
 
 @media (prefers-reduced-motion: reduce) {

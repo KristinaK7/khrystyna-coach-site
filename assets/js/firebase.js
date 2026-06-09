@@ -55,7 +55,6 @@ window.saveReview = async (review) => {
 
   return firestore.collection("reviews").add({
     name: review.name,
-    rating: review.rating,
     text: review.text,
     pageLanguage: review.pageLanguage,
     detectedLanguage: null,
@@ -82,7 +81,6 @@ window.loadReviews = async () => {
       return {
         id: doc.id,
         name: data.name || "",
-        rating: data.rating || 0,
         text: data.text || "",
         language: data.detectedLanguage || data.pageLanguage || "",
         createdAt: data.createdAt,
@@ -109,7 +107,6 @@ window.loadAllReviews = async () => {
       return {
         id: doc.id,
         name: data.name || "",
-        rating: data.rating || 0,
         text: data.text || "",
         status: data.status || "pending",
         pageLanguage: data.pageLanguage || "",

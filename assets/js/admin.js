@@ -101,20 +101,16 @@ const renderReviewGroup = (list, reviews, emptyText) => {
     const card = document.createElement("article");
     const meta = document.createElement("div");
     const status = document.createElement("span");
-    const stars = document.createElement("div");
     const name = document.createElement("h2");
     const text = document.createElement("p");
     const date = document.createElement("span");
     const actions = document.createElement("div");
-    const rating = Math.max(0, Math.min(5, Number(review.rating) || 0));
 
     card.className = "admin-review-card";
     card.dataset.status = review.status;
     meta.className = "admin-review-meta";
     status.className = "admin-status";
     status.textContent = review.status === "approved" ? "Visible" : "Hidden";
-    stars.className = "testimonial-stars";
-    stars.textContent = "\u2605".repeat(rating) + "\u2606".repeat(5 - rating);
     name.textContent = review.name || "No name";
     text.textContent = review.text || "";
     date.className = "admin-review-date";
@@ -163,7 +159,7 @@ const renderReviewGroup = (list, reviews, emptyText) => {
     );
 
     meta.append(status, date);
-    card.append(meta, stars, name, text, actions);
+    card.append(meta, name, text, actions);
     list.appendChild(card);
   });
 };

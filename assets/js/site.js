@@ -1,7 +1,4 @@
-const stars = document.querySelectorAll(".rating span");
-const ratingInput = document.getElementById("ratingValue");
-const ratingControl = document.querySelector(".rating");
-const reviewForm = document.querySelector(".review-form");
+﻿const reviewForm = document.querySelector(".review-form");
 const pageLanguage = document.documentElement.lang === "cs" ? "cs" : "uk";
 const reviewRateLimitKey = "khrystynaReviewSubmissions";
 const reviewRateLimitWindow = 5 * 60 * 1000;
@@ -9,7 +6,6 @@ const reviewRateLimitMax = 2;
 const reviewMessages = {
   uk: {
     nameRequired: "Введіть ім'я перед відправкою.",
-    ratingRequired: "Оберіть оцінку перед відправкою.",
     textRequired: "Напишіть текст відгуку перед відправкою.",
     rateLimited: "Ви вже надіслали кілька відгуків. Спробуйте ще раз трохи пізніше.",
     sending: "Відправляємо відгук...",
@@ -18,7 +14,6 @@ const reviewMessages = {
   },
   cs: {
     nameRequired: "Zadejte jméno před odesláním.",
-    ratingRequired: "Vyberte hodnocení před odesláním.",
     textRequired: "Napište text recenze před odesláním.",
     rateLimited: "Už jste odeslali několik recenzí. Zkuste to prosím o něco později.",
     sending: "Odesíláme recenzi...",
@@ -27,22 +22,6 @@ const reviewMessages = {
   },
 };
 const labels = reviewMessages[pageLanguage];
-
-stars.forEach((star) => {
-  star.addEventListener("click", () => {
-    const value = Number(star.dataset.value);
-
-    ratingInput.value = value;
-
-    stars.forEach((s) => {
-      if (Number(s.dataset.value) <= value) {
-        s.classList.add("active");
-      } else {
-        s.classList.remove("active");
-      }
-    });
-  });
-});
 
 const setReviewFormMessage = (message, type = "info") => {
   if (!reviewForm) {
@@ -59,16 +38,6 @@ const setReviewFormMessage = (message, type = "info") => {
 
   messageElement.textContent = message;
   messageElement.dataset.type = type;
-};
-
-const resetRating = () => {
-  if (ratingInput) {
-    ratingInput.value = "0";
-  }
-
-  stars.forEach((star) => {
-    star.classList.remove("active");
-  });
 };
 
 const keepFocusedFieldVisible = (field) => {
@@ -120,7 +89,6 @@ if (reviewForm) {
     const submitButton = reviewForm.querySelector('button[type="submit"]');
     const name = nameInput.value.trim();
     const text = textInput.value.trim();
-    const rating = Number(ratingInput?.value || 0);
 
     if (honeypotInput?.value.trim()) {
       return;
@@ -137,12 +105,6 @@ if (reviewForm) {
       return;
     }
 
-    if (!rating) {
-      setReviewFormMessage(labels.ratingRequired, "error");
-      ratingControl?.focus();
-      return;
-    }
-
     if (!text) {
       setReviewFormMessage(labels.textRequired, "error");
       textInput.focus();
@@ -151,7 +113,6 @@ if (reviewForm) {
 
     const review = {
       name,
-      rating,
       text,
       pageLanguage,
     };
@@ -163,7 +124,6 @@ if (reviewForm) {
       await window.saveReview(review);
       rememberReviewSubmission();
       reviewForm.reset();
-      resetRating();
       setReviewFormMessage(labels.success, "success");
     } catch (error) {
       console.error(error);
@@ -188,19 +148,16 @@ const renderReviews = (list, reviews) => {
   list.innerHTML = "";
 
   reviews.forEach((review) => {
-    const rating = Math.max(0, Math.min(5, Number(review.rating) || 0));
     const card = document.createElement("article");
-    const stars = document.createElement("div");
     const name = document.createElement("h3");
     const text = document.createElement("p");
+
     card.className = "testimonial-card";
     card.dataset.reviewLanguage = review.language || "";
-    stars.className = "testimonial-stars";
-    stars.textContent = "★".repeat(rating) + "☆".repeat(5 - rating);
     name.textContent = review.name;
     text.textContent = review.text || "";
 
-    card.append(stars, name, text);
+    card.append(name, text);
     list.appendChild(card);
   });
 };
@@ -463,3 +420,4 @@ copyButtons.forEach((button) => {
     }
   });
 });
+
